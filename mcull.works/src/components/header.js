@@ -11,6 +11,7 @@ import {
   InteractiveIcon,
   Nudge,
   VisuallyHidden,
+  Logo,
 } from "./ui"
 import {
   mobileNavOverlay,
@@ -20,7 +21,8 @@ import {
   mobileNavSVGColorWrapper,
 } from "./header.css"
 import NavItemGroup from "./nav-item-group"
-import BrandLogo from "./brand-logo"
+import McullLogo from "./mcull-logo"
+import { StaticImage } from "gatsby-plugin-image"
 
 export default function Header() {
   const data = useStaticQuery(graphql`
@@ -77,7 +79,6 @@ export default function Header() {
         <Flex variant="spaceBetween">
           <NavLink to="/">
             <VisuallyHidden>Home</VisuallyHidden>
-            <BrandLogo />
           </NavLink>
           <nav>
             <FlexList gap={4}>
@@ -96,7 +97,7 @@ export default function Header() {
                 ))}
             </FlexList>
           </nav>
-          <div>{cta && <Button to={cta.href}>{cta.text}</Button>}</div>
+          <div />
         </Flex>
       </Container>
       <Container className={mobileHeaderNavWrapper[isOpen ? "open" : "closed"]}>
@@ -109,7 +110,7 @@ export default function Header() {
           >
             <NavLink to="/">
               <VisuallyHidden>Home</VisuallyHidden>
-              <BrandLogo />
+           
             </NavLink>
           </span>
           <Flex>

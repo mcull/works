@@ -10,11 +10,13 @@ export default function Homepage(props) {
 
   return (
     <Layout>
-      {homepage.blocks.map((block) => {
-        const { id, blocktype, ...componentProps } = block
-        const Component = sections[blocktype] || Fallback
-        return <Component key={id} {...componentProps} />
-      })}
+      <div className="homepageContent" style={{position: 'relative', top:-90}}>
+        {homepage.blocks.map((block) => {
+          const { id, blocktype, ...componentProps } = block
+          const Component = sections[blocktype] || Fallback
+          return <Component key={id} {...componentProps} />
+        })}
+      </div>
     </Layout>
   )
 }

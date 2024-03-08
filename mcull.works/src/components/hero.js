@@ -15,13 +15,14 @@ import {
 
 export default function Hero(props) {
   return (
-    <Section>
+    <Section className="hero"   style={{borderBottom:'1px white solid'}}>
       <Container>
         <Flex gap={4} variant="responsive">
           <Box width="half">
             {props.image && (
               <GatsbyImage
                 alt={props.image.alt}
+                style={{position:"relative",left:-60}}
                 image={getImage(props.image.gatsbyImageData)}
               />
             )}

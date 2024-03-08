@@ -6,7 +6,7 @@ export default function McullLogo() {
   return <StaticImage 
   src="../images/small_jacket_logo_opt.png"
   loading="egaer"
-  height="75"
-  width="75" 
+  height="64"
+  width="64" 
   alt="Black jacked with a fuzzy orange bag" />
 }

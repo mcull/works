@@ -21,7 +21,7 @@ import {
   mobileNavSVGColorWrapper,
 } from "./header.css"
 import NavItemGroup from "./nav-item-group"
-import McullLogo from "./mcull-logo"
+import HomeIcon from "./home-icon"
 import { StaticImage } from "gatsby-plugin-image"
 
 export default function Header() {
@@ -79,6 +79,7 @@ export default function Header() {
         <Flex variant="spaceBetween">
           <NavLink to="/">
             <VisuallyHidden>Home</VisuallyHidden>
+            <HomeIcon />
           </NavLink>
           <nav>
             <FlexList gap={4}>

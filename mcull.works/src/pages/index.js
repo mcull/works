@@ -25,8 +25,8 @@ export const Head = (props) => {
   return <SEOHead {...homepage} />
 }
 export const query = graphql`
-  {
-    homepage {
+   {
+    homepage(title: { eq: "mcull.works"}) {
       id
       title
       description
@@ -43,7 +43,6 @@ export const query = graphql`
         ...HomepageLogoListContent
         ...HomepageTestimonialListContent
         ...HomepageBenefitListContent
-        ...HomepageStatListContent
         ...HomepageProductListContent
       }
     }

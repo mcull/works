@@ -124,6 +124,7 @@ exports.createSchemaCustomization = async ({ actions }) => {
       subhead: String
       image: HomepageImage
       text: String
+      isMarc: Boolean
       links: [HomepageLink]
     }
 
@@ -384,6 +385,7 @@ exports.createSchemaCustomization = async ({ actions }) => {
       heading: String!
       kicker: String
       subhead: String
+      isMarc: Boolean
       image: HomepageImage @link(from: "image___NODE")
       text: String
       links: [HomepageLink] @link(from: "links___NODE")

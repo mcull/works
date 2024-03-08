@@ -15,14 +15,14 @@ import {
 
 export default function Hero(props) {
   return (
-    <Section className="hero"   style={{borderBottom:'1px white solid'}}>
+    <Section className="hero">
       <Container>
         <Flex gap={4} variant="responsive">
           <Box width="half">
             {props.image && (
               <GatsbyImage
                 alt={props.image.alt}
-                style={{position:"relative",left:-60}}
+                style={props.isMarc && {"position":"relative","left":-60,"borderBottom":"6px orange solid"}}
                 image={getImage(props.image.gatsbyImageData)}
               />
             )}
@@ -49,6 +49,7 @@ export const query = graphql`
     h1: heading
     subhead
     text
+    isMarc
     links {
       id
       href

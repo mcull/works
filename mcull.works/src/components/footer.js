@@ -20,6 +20,7 @@ import {
   VisuallyHidden,
 } from "./ui"
 import BrandLogo from "./brand-logo"
+import McullLogo from "./mcull-logo"
 
 const socialMedia = {
   TWITTER: {
@@ -103,7 +104,7 @@ export default function Footer() {
         <Flex variant="start" responsive>
           <NavLink to="/">
             <VisuallyHidden>Home</VisuallyHidden>
-            <BrandLogo />
+            <McullLogo />
           </NavLink>
           <Space />
           <FlexList>

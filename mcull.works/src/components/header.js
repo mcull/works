@@ -1,6 +1,7 @@
 import * as React from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import { Menu, X } from "react-feather"
+import { useLocation } from "@reach/router"
 import {
   Container,
   Flex,
@@ -22,7 +23,6 @@ import {
 } from "./header.css"
 import NavItemGroup from "./nav-item-group"
 import HomeIcon from "./home-icon"
-import { StaticImage } from "gatsby-plugin-image"
 
 export default function Header() {
   const data = useStaticQuery(graphql`
@@ -72,6 +72,8 @@ export default function Header() {
     }
   }, [isOpen])
 
+  const location = useLocation()
+
   return (
     <header>
       <Container className={desktopHeaderNavWrapper}>
@@ -79,7 +81,7 @@ export default function Header() {
         <Flex variant="spaceBetween">
           <NavLink to="/">
             <VisuallyHidden>Home</VisuallyHidden>
-            <HomeIcon />
+            {location.pathname !== '/' && <HomeIcon />}
           </NavLink>
           <nav>
             <FlexList gap={4}>
@@ -141,6 +143,11 @@ export default function Header() {
         <div className={mobileNavOverlay}>
           <nav>
             <FlexList responsive variant="stretch">
+              <li key={"home"}>
+                <NavLink to="/" className={mobileNavLink}>
+                  Home
+                </NavLink>
+              </li>
               {navItems?.map((navItem) => (
                 <li key={navItem.id}>
                   {navItem.navItemType === "Group" ? (

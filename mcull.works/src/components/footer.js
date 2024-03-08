@@ -19,7 +19,7 @@ import {
   IconLink,
   VisuallyHidden,
 } from "./ui"
-import BrandLogo from "./brand-logo"
+import { useLocation } from "@reach/router"
 import McullLogo from "./mcull-logo"
 
 const socialMedia = {
@@ -104,7 +104,7 @@ export default function Footer() {
         <Flex variant="start" responsive>
           <NavLink to="/">
             <VisuallyHidden>Home</VisuallyHidden>
-            <McullLogo />
+            
           </NavLink>
           <Space />
           <FlexList>

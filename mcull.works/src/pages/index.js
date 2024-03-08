@@ -10,7 +10,7 @@ export default function Homepage(props) {
 
   return (
     <Layout>
-      <div className="homepageContent" style={{position: 'relative', top:-90}}>
+      <div className="homepageContent" >
         {homepage.blocks.map((block) => {
           const { id, blocktype, ...componentProps } = block
           const Component = sections[blocktype] || Fallback
